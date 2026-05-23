@@ -28,6 +28,13 @@ namespace NTierTodoApp.DataAccess
             return tasks.FirstOrDefault(t => t.Id == id);
         }
 
-        
+        public void Delete(int id)
+        {
+            var task = GetById(id);
+            if (task != null)
+            {
+                tasks.Remove(task);
+            }
+        }
     }
 }
